@@ -3,6 +3,7 @@ import random
 from pygame import mixer
 import math
 import time
+from tkinter import messagebox
 no_of_chickens=20
 no_of_enemies=3
 pygame.init()
@@ -41,7 +42,7 @@ ballon_state = 'ready'
 ballonX = playerX
 ballonY = playerY - 16
 ballonX_change = 0
-ballonY_change = 0.5
+ballonY_change = 1
 ballon_state = 'ready'
 
 # score
@@ -116,6 +117,7 @@ while running:
             enemyX[i] = 2000
             enemyY[i]=2000
             enemy(enemyX[i],enemyY[i],i)
+        player(playerX, playerY)
         gameover_display()
 
         pygame.display.update()
@@ -140,3 +142,4 @@ while running:
 
     score_display()
     pygame.display.update()
+messagebox.showinfo('total score',str(score_value))
